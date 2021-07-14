@@ -5,9 +5,9 @@
     <string name="date_release_movie">22.04.2021</string>
     <string name="name_of_movie">Гнев человеческий</string>
     <string name="title_actors">Актеры</string>
-    <string name="name_stetham">Джейсон Стэйтем</string>
-    <string name="name_holt">Холт Маккэллани</string>
-    <string name="name_jd">Джош Харнетт</string>
+    <string name="name_one">Джейсон Стэйтем</string>
+    <string name="name_two">Холт Маккэллани</string>
+    <string name="name_three">Джош Харнетт</string>
     <string name="age_limit">18+</string>
 
 

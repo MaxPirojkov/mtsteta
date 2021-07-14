@@ -5,11 +5,11 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/mainpic"
+        android:id="@+id/mainPic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/topstetam"
+        android:src="@drawable/top_pic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -203,74 +203,74 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/fotoStetham"
+                        android:id="@+id/fotoOne"
                         android:layout_width="150dp"
                         android:layout_height="196dp"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="16dp"
-                        android:src="@drawable/stetham_actor"
+                        android:src="@drawable/first_actor"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/nameOfStetham"
+                        android:id="@+id/nameOne"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="12dp"
-                        android:text="@string/name_stetham"
+                        android:text="@string/name_one"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/fotoStetham" />
+                        app:layout_constraintTop_toBottomOf="@id/fotoOne" />
 
                     <ImageView
-                        android:id="@+id/fotoHolt"
+                        android:id="@+id/fotoTwo"
                         android:layout_width="150dp"
                         android:layout_height="196dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="16dp"
-                        android:src="@drawable/holt_actor"
-                        app:layout_constraintStart_toEndOf="@id/fotoStetham"
+                        android:src="@drawable/second_actor"
+                        app:layout_constraintStart_toEndOf="@id/fotoOne"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/nameOfHolt"
+                        android:id="@+id/nameTwo"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="12dp"
-                        android:text="@string/name_holt"
+                        android:text="@string/name_two"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/nameOfStetham"
-                        app:layout_constraintTop_toBottomOf="@id/fotoHolt" />
+                        app:layout_constraintStart_toEndOf="@id/nameOne"
+                        app:layout_constraintTop_toBottomOf="@id/fotoTwo" />
 
                     <ImageView
-                        android:id="@+id/fotoDj"
+                        android:id="@+id/fotoThree"
                         android:layout_width="150dp"
                         android:layout_height="196dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="16dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/dj_actor"
-                        app:layout_constraintStart_toEndOf="@id/fotoHolt"
+                        android:src="@drawable/third_actor"
+                        app:layout_constraintStart_toEndOf="@id/fotoTwo"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/nameOfJd"
+                        android:id="@+id/nameTwo"
                         android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="12dp"
-                        android:text="@string/name_jd"
+                        android:text="@string/name_three"
                         android:textColor="@color/black"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@id/nameOfHolt"
-                        app:layout_constraintTop_toBottomOf="@id/fotoHolt" />
+                        app:layout_constraintStart_toEndOf="@id/nameTwo"
+                        app:layout_constraintTop_toBottomOf="@id/fotoTwo" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </HorizontalScrollView>
