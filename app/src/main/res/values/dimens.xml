@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="indent_margin">20dp</dimen>
+
+    <dimen name="default_high_pic">196dp</dimen>
+    <dimen name="default_width_pic">150dp</dimen>
+
+
+</resources>
+
