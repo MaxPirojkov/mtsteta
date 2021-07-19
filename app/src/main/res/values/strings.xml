@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Pirozhkov Teta</string>
+    <string name="description_of_movie">"Эйч — загадочный и холодный на вид\nджентльмен, но внутри него пылает жажда\nсправедливости. Преследуя свои мотивы, он\nвнедряется в инкассаторскую компанию, чтобы\nвыйти на соучастников серии многомиллионных\nограблений, потрясших Лос-Анджелес. В этой\nзапутанной игре у каждого своя роль, но под\nподозрением оказываются все. Виновных же\nобязательно постигнет гнев человеческий." </string>
+    <string name="genre_action">боевики</string>
+    <string name="date_release_movie">22.04.2021</string>
+    <string name="name_of_movie">Гнев человеческий</string>
+    <string name="title_actors">Актеры</string>
+    <string name="name_one">Джейсон Стэйтем</string>
+    <string name="name_two">Холт Маккэллани</string>
+    <string name="name_three">Джош Харнетт</string>
+    <string name="age_limit">18+</string>
+
+
 </resources>
