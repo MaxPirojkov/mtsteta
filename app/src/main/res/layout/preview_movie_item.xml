@@ -5,20 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.makeramen.roundedimageview.RoundedImageView
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/picPreview"
         android:layout_width="150dp"
         android:layout_height="216dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="20dp"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="@dimen/indent_margin"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="@dimen/indent_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:riv_corner_radius="10dip"
-        tools:src="@tools:sample/backgrounds/scenic"
-        />
+        tools:src="@tools:sample/backgrounds/scenic" />
 
     <TextView
         android:id="@+id/textTitle"
@@ -26,12 +24,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:textColor="@color/black"
-        android:textSize="14sp"
+        android:textSize="@dimen/default_text_size"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/picPreview"
         app:layout_constraintStart_toStartOf="@+id/picPreview"
         app:layout_constraintTop_toBottomOf="@id/picPreview"
-        tools:text="Гнев человеческий" />
+        tools:text="@string/name_of_movie" />
 
     <TextView
         android:id="@+id/textDescription"
@@ -39,84 +37,32 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
-        android:textSize="12sp"
+        android:textSize="@dimen/large_text_size"
         app:layout_constraintEnd_toEndOf="@+id/picPreview"
         app:layout_constraintStart_toStartOf="@+id/picPreview"
         app:layout_constraintTop_toBottomOf="@id/textTitle"
-        tools:text="Эйч — загадочный\nи холодный на вид\nджентльмен, но внутри\nнего пылает жажда\nсправедливости.\nПреследуя..." />
+        tools:text="@string/description_preview"/>
 
     <ImageView
         android:id="@+id/ellipse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="2dp"
         android:src="@drawable/ic_ellipse_age"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textTitle"
-        android:layout_marginEnd="2dp"
-        android:layout_marginTop="110dp"/>
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
 
     <TextView
         android:id="@+id/textOfAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/ellipse"
-        app:layout_constraintStart_toStartOf="@id/ellipse"
-        app:layout_constraintEnd_toEndOf="@id/ellipse"
-        app:layout_constraintBottom_toBottomOf="@id/ellipse"
         android:textColor="@color/black"
-        />
+        app:layout_constraintBottom_toBottomOf="@id/ellipse"
+        app:layout_constraintEnd_toEndOf="@id/ellipse"
+        app:layout_constraintStart_toStartOf="@id/ellipse"
+        app:layout_constraintTop_toTopOf="@id/ellipse" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/star1"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="4dp"-->
-<!--        android:layout_marginTop="110dp"-->
-<!--        android:src="@drawable/ic_white_star"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textTitle"-->
-<!--        />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/star2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="2dp"-->
-<!--        android:layout_marginTop="110dp"-->
-<!--        android:layout_marginEnd="2dp"-->
-<!--        android:src="@drawable/ic_white_star"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/star3"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/star1"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textTitle" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/star3"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="110dp"-->
-<!--        android:src="@drawable/ic_white_star"-->
-<!--        app:layout_constraintEnd_toStartOf="@+id/star4"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textTitle" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/star4"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="2dp"-->
-<!--        android:layout_marginTop="110dp"-->
-<!--        android:src="@drawable/ic_white_star"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/star3"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textTitle" />-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/star5"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="2dp"-->
-<!--        android:layout_marginTop="110dp"-->
-<!--        android:src="@drawable/ic_white_star"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/star4"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/textTitle" />-->
 
     <RatingBar
         android:id="@+id/rateBar"
@@ -125,10 +71,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="110dp"
         android:layout_marginBottom="5dp"
+        android:isIndicator="true"
+        android:progressTint="@color/black"
         android:scaleX="1.2"
         android:scaleY="1.2"
-        android:progressTint="@color/black"
-        android:isIndicator="true"
         android:stepSize="0.01"
         android:transformPivotX="0dp"
         android:transformPivotY="0dp"
