@@ -13,12 +13,11 @@ class MainActivity : AppCompatActivity(), PreviewMovieAdapter.OnItemClickListene
         setContentView(R.layout.activity_main)
         val recycler = findViewById<RecyclerView>(R.id.rcView)
         val movies = MoviesDataSourceImpl().getMovies()
-        val adapter = PreviewMovieAdapter(this, movies, this)
+        val adapter = PreviewMovieAdapter(this, this)
         recycler.adapter = adapter
         recycler.layoutManager = GridLayoutManager(this@MainActivity, 2)
-
+        adapter.updates(movies)
     }
-
 
 
     override fun onItemClick(item: TextView, position: Int) {

@@ -13,9 +13,9 @@ import android.widget.RatingBar
 
 class PreviewMovieAdapter(
     context: Context,
-    val movies: List<PreviewMovie>,
     private val clickListener: MainActivity
 ) : RecyclerView.Adapter<PreviewMovieAdapter.PreviewHolder>() {
+    private var movies: List<PreviewMovie> = emptyList()
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
 
@@ -25,7 +25,6 @@ class PreviewMovieAdapter(
 
     override fun onBindViewHolder(holder: PreviewHolder, position: Int) {
         holder.bind(movies.get(position))
-//        holder.intialize(movies.get(position), clickListener)
     }
 
     override fun getItemCount(): Int = movies.size
@@ -59,6 +58,11 @@ class PreviewMovieAdapter(
 
     interface OnItemClickListener {
         fun onItemClick(item: TextView, position: Int)
+    }
+
+    fun updates(movies: List<PreviewMovie>) {
+        this.movies = movies
+        notifyDataSetChanged()
     }
 }
 
