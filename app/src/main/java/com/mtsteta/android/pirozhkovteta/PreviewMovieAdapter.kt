@@ -13,7 +13,7 @@ import android.widget.RatingBar
 
 class PreviewMovieAdapter(
     context: Context,
-    private val clickListener: MainActivity
+    private val onItemClick: (String) -> Unit
 ) : RecyclerView.Adapter<PreviewMovieAdapter.PreviewHolder>() {
     private var movies: List<PreviewMovie> = emptyList()
 
@@ -29,8 +29,7 @@ class PreviewMovieAdapter(
 
     override fun getItemCount(): Int = movies.size
 
-    inner class PreviewHolder(item: View) : RecyclerView.ViewHolder(item),
-        View.OnClickListener {
+    inner class PreviewHolder(item: View) : RecyclerView.ViewHolder(item) {
         private val imagePicMovie: ImageView = item.findViewById(R.id.picPreview)
         private val textNameMovie: TextView = item.findViewById(R.id.textTitle)
         private val textDescriptionMovie: TextView = item.findViewById(R.id.textDescription)
@@ -43,30 +42,15 @@ class PreviewMovieAdapter(
             textDescriptionMovie.text = previewMovie.description
             textAgeLimit.text = previewMovie.ageRestriction
             bar.rating = (previewMovie.rateScore.toFloat())
-        }
 
-
-        init {
-            item.setOnClickListener(this)
-        }
-
-        override fun onClick(v: View?) {
-            val position: Int = adapterPosition
-            clickListener.onItemClick(textNameMovie, position)
+            itemView.setOnClickListener { onItemClick.invoke(previewMovie.title) }
         }
     }
-
-    interface OnItemClickListener {
-        fun onItemClick(item: TextView, position: Int)
-    }
-
     fun updates(movies: List<PreviewMovie>) {
         this.movies = movies
         notifyDataSetChanged()
     }
 }
-
-
 private fun ImageView.loadImage(imageUrl: String) {
     Glide.with(this.context).load(imageUrl).into(this)
 }
