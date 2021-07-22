@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/indent_margin"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/ic_rectangle"
+                android:src="@drawable/ic_small_rectangle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@id/textView" />
 
