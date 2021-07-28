@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/selfName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="64dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/name_Profile"
+                android:textColor="@color/black"
+                android:textSize="@dimen/title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/selfEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_email"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selfName" />
+
+            <ImageView
+                android:id="@+id/selfFoto"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:src="@drawable/self_f"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/interestTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="58dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/profilt_interest"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selfEmail" />
+
+            <HorizontalScrollView
+                android:id="@+id/horScroll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="14dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/interestTitle">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/oval_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_oval"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/genre_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genre_action"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/small_text_size"
+                        app:layout_constraintBottom_toBottomOf="@id/oval_one"
+                        app:layout_constraintEnd_toEndOf="@id/oval_one"
+                        app:layout_constraintStart_toStartOf="@id/oval_one"
+                        app:layout_constraintTop_toTopOf="@id/oval_one" />
+
+                    <ImageView
+                        android:id="@+id/oval_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_oval"
+                        app:layout_constraintStart_toEndOf="@id/oval_one"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/genre_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genre_drama"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/small_text_size"
+                        app:layout_constraintBottom_toBottomOf="@id/oval_two"
+                        app:layout_constraintEnd_toEndOf="@id/oval_two"
+                        app:layout_constraintStart_toStartOf="@id/oval_two"
+                        app:layout_constraintTop_toTopOf="@id/oval_two" />
+
+                    <ImageView
+                        android:id="@+id/oval_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_oval"
+                        app:layout_constraintStart_toEndOf="@id/oval_two"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/genre_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genre_comedy"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/small_text_size"
+                        app:layout_constraintBottom_toBottomOf="@id/oval_three"
+                        app:layout_constraintEnd_toEndOf="@id/oval_three"
+                        app:layout_constraintStart_toStartOf="@id/oval_three"
+                        app:layout_constraintTop_toTopOf="@id/oval_three" />
+
+                    <ImageView
+                        android:id="@+id/oval_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_oval"
+                        app:layout_constraintStart_toEndOf="@id/oval_three"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/genre_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genre_art"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/small_text_size"
+                        app:layout_constraintBottom_toBottomOf="@id/oval_four"
+                        app:layout_constraintEnd_toEndOf="@id/oval_four"
+                        app:layout_constraintStart_toStartOf="@id/oval_four"
+                        app:layout_constraintTop_toTopOf="@id/oval_four" />
+
+                    <ImageView
+                        android:id="@+id/oval_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="6dp"
+                        android:src="@drawable/ic_rectangle_1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/oval_four"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/genre_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genre_melodrama"
+                        android:textColor="@color/black"
+                        android:textSize="10sp"
+                        app:layout_constraintBottom_toBottomOf="@id/oval_five"
+                        app:layout_constraintEnd_toEndOf="@id/oval_five"
+                        app:layout_constraintStart_toStartOf="@id/oval_five"
+                        app:layout_constraintTop_toTopOf="@id/oval_five" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/selfInfoTittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/profile_data_self"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horScroll" />
+
+            <TextView
+                android:id="@+id/subName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_name"
+                android:textColor="@color/text_color_profile"
+                android:textSize="@dimen/large_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selfInfoTittle" />
+
+            <EditText
+                android:id="@+id/editName"
+                android:layout_width="320dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="15dp"
+                android:hint="@string/name_Profile"
+                app:backgroundTint="@color/text_color_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/selfInfoTittle"
+                />
+
+            <EditText
+                android:id="@+id/editPassword"
+                android:layout_width="320dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="14dp"
+                android:hint="**********"
+                app:backgroundTint="@color/text_color_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editName" />
+
+
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="320dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="14dp"
+                android:hint="@string/profile_email"
+                app:backgroundTint="@color/text_color_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+
+            <EditText
+                android:id="@+id/editPhone"
+                android:layout_width="320dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="14dp"
+                android:hint="@string/profile_hint_phone"
+                app:backgroundTint="@color/text_color_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+
+            <TextView
+                android:id="@+id/settingTextTittle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/profile_tittle_settings"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editPhone" />
+
+            <TextView
+                android:id="@+id/notifyAndSound"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_notify_and_sounds"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/settingTextTittle" />
+
+            <TextView
+                android:id="@+id/confident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="@dimen/indent_margin"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_confident"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notifyAndSound" />
+
+            <TextView
+                android:id="@+id/theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="@dimen/indent_margin"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_theme"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/confident" />
+
+            <TextView
+                android:id="@+id/language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="@dimen/indent_margin"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_languge"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/theme" />
+
+            <TextView
+                android:id="@+id/dataAndMamory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="@dimen/indent_margin"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_data"
+                android:textColor="@color/black"
+                android:textSize="@dimen/default_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/language" />
+
+            <TextView
+                android:id="@+id/supApp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/profile_app"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dataAndMamory" />
+
+            <TextView
+                android:id="@+id/addQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_sup_que"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/supApp" />
+
+            <TextView
+                android:id="@+id/addReport"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:drawableEnd="@drawable/right"
+                android:fontFamily="@font/roboto_regular"
+                android:text="@string/profile_sup_report"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addQuestion" />
+
+            <Button
+                android:id="@+id/buttonExit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/indent_margin"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="@dimen/indent_margin"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/profile_exit"
+                android:textColor="@color/black"
+                android:textSize="@dimen/small_title_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addReport"
+                android:backgroundTint="@color/buttom_color"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

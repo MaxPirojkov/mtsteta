@@ -4,218 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F1F1"
+    android:background="@color/main_background"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/icLupa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="@dimen/indent_margin"
-        android:src="@drawable/ic_lupa"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="@dimen/indent_margin"
-        android:layout_marginTop="72dp"
-        android:text="@string/title_popular_now"
-        android:textColor="@color/black"
-        android:textSize="@dimen/small_title_text_size"
-        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <HorizontalScrollView
-        android:id="@+id/scrollGenre"
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/nav_view_bottom"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/indent_margin"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/oval_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_oval"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/genre_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/genre_action"
-                android:textColor="@color/black"
-                android:textSize="@dimen/small_text_size"
-                app:layout_constraintBottom_toBottomOf="@id/oval_one"
-                app:layout_constraintEnd_toEndOf="@id/oval_one"
-                app:layout_constraintStart_toStartOf="@id/oval_one"
-                app:layout_constraintTop_toTopOf="@id/oval_one" />
-
-            <ImageView
-                android:id="@+id/oval_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:src="@drawable/ic_oval"
-                app:layout_constraintStart_toEndOf="@id/oval_one"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/genre_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/genre_drama"
-                android:textColor="@color/black"
-                android:textSize="@dimen/small_text_size"
-                app:layout_constraintBottom_toBottomOf="@id/oval_two"
-                app:layout_constraintEnd_toEndOf="@id/oval_two"
-                app:layout_constraintStart_toStartOf="@id/oval_two"
-                app:layout_constraintTop_toTopOf="@id/oval_two" />
-
-            <ImageView
-                android:id="@+id/oval_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:src="@drawable/ic_oval"
-                app:layout_constraintStart_toEndOf="@id/oval_two"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/genre_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/genre_comedy"
-                android:textColor="@color/black"
-                android:textSize="@dimen/small_text_size"
-                app:layout_constraintBottom_toBottomOf="@id/oval_three"
-                app:layout_constraintEnd_toEndOf="@id/oval_three"
-                app:layout_constraintStart_toStartOf="@id/oval_three"
-                app:layout_constraintTop_toTopOf="@id/oval_three" />
-
-            <ImageView
-                android:id="@+id/oval_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:src="@drawable/ic_oval"
-                app:layout_constraintStart_toEndOf="@id/oval_three"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/genre_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/genre_art"
-                android:textColor="@color/black"
-                android:textSize="@dimen/small_text_size"
-                app:layout_constraintBottom_toBottomOf="@id/oval_four"
-                app:layout_constraintEnd_toEndOf="@id/oval_four"
-                app:layout_constraintStart_toStartOf="@id/oval_four"
-                app:layout_constraintTop_toTopOf="@id/oval_four" />
-
-            <ImageView
-                android:id="@+id/oval_five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="6dp"
-                android:src="@drawable/ic_rectangle_1"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/oval_four"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/genre_five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/genre_melodrama"
-                android:textColor="@color/black"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="@id/oval_five"
-                app:layout_constraintEnd_toEndOf="@id/oval_five"
-                app:layout_constraintStart_toStartOf="@id/oval_five"
-                app:layout_constraintTop_toTopOf="@id/oval_five" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </HorizontalScrollView>
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="14dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/homeBut"
+        android:layout_marginTop="42dp"
+        android:background="@color/white"
+        app:itemBackground="@drawable/selector"
+        app:itemIconTint="@drawable/bottom_nav_icon_color"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/scrollGenre">
-
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <View
-        android:id="@+id/homeBut"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rcView"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <ImageView
-        android:id="@+id/iconHomeBut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_home_but"
-        app:layout_constraintBottom_toBottomOf="@id/homeBut"
-        app:layout_constraintEnd_toEndOf="@id/homeBut"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/homeBut" />
-
-
-    <View
-        android:id="@+id/profileBut"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:background="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/homeBut"
-        app:layout_constraintTop_toBottomOf="@id/rcView"
-        app:layout_constraintWidth_percent="0.5" />
-
-    <View
-        android:id="@+id/oneLine"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:background="@color/black"
-        app:layout_constraintBottom_toBottomOf="@id/homeBut"
-        app:layout_constraintEnd_toEndOf="@+id/homeBut"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <ImageView
-        android:id="@+id/iconProfileBut"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_profile_but"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/profileBut"
-        app:layout_constraintStart_toStartOf="@id/profileBut"
-        app:layout_constraintTop_toTopOf="@id/profileBut" />
-
-
+        app:menu="@menu/bottom_nav_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

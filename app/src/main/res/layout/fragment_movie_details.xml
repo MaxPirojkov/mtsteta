@@ -31,8 +31,10 @@
                 android:background="@drawable/shape_textview"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
                 android:id="@+id/ellipseTextView"
@@ -111,56 +113,23 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/dateOfBirth" />
 
-            <ImageView
-                android:id="@+id/star1"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/indent_margin"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_black_star"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfMovie" />
-
-            <ImageView
-                android:id="@+id/star2"
+            <RatingBar
+                android:id="@+id/rateBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="2dp"
-                android:src="@drawable/ic_black_star"
-                app:layout_constraintEnd_toStartOf="@+id/star3"
-                app:layout_constraintStart_toEndOf="@+id/star1"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfMovie" />
-
-            <ImageView
-                android:id="@+id/star3"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_black_star"
-                app:layout_constraintEnd_toStartOf="@+id/star4"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfMovie" />
-
-            <ImageView
-                android:id="@+id/star4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_black_star"
-                app:layout_constraintStart_toEndOf="@+id/star3"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfMovie" />
-
-            <ImageView
-                android:id="@+id/star5"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_white_star"
-                app:layout_constraintStart_toEndOf="@+id/star4"
-                app:layout_constraintTop_toBottomOf="@+id/nameOfMovie" />
+                android:layout_marginStart="20dp"
+                android:isIndicator="true"
+                android:progressTint="@color/black"
+                android:scaleX="1.2"
+                android:scaleY="1.2"
+                android:stepSize="0.01"
+                android:transformPivotX="0dp"
+                android:transformPivotY="0dp"
+                app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
 
             <TextView
                 android:id="@+id/descriptionOfMovie"
@@ -176,7 +145,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/star1" />
+                app:layout_constraintTop_toBottomOf="@id/rateBar" />
 
             <TextView
                 android:id="@+id/tActors"
@@ -224,7 +193,8 @@
                         android:textSize="12sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/fotoOne" />
+                        app:layout_constraintTop_toBottomOf="@id/fotoOne"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
 
                     <ImageView
                         android:id="@+id/fotoTwo"
@@ -234,7 +204,8 @@
                         android:layout_marginTop="16dp"
                         android:src="@drawable/second_actor"
                         app:layout_constraintStart_toEndOf="@id/fotoOne"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        />
 
                     <TextView
                         android:id="@+id/nameTwo"
@@ -247,7 +218,8 @@
                         android:textSize="@dimen/large_text_size"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/nameOne"
-                        app:layout_constraintTop_toBottomOf="@id/fotoTwo" />
+                        app:layout_constraintTop_toBottomOf="@id/fotoTwo"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
 
                     <ImageView
                         android:id="@+id/fotoThree"
@@ -271,61 +243,11 @@
                         android:textSize="@dimen/large_text_size"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/nameTwo"
-                        app:layout_constraintTop_toBottomOf="@id/fotoTwo" />
+                        app:layout_constraintTop_toBottomOf="@id/fotoTwo"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </HorizontalScrollView>
-
-            <View
-                android:id="@+id/homeBut"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="46dp"
-                android:background="@color/white"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/horizScroll"
-                app:layout_constraintWidth_percent="0.5" />
-
-            <ImageView
-                android:id="@+id/iconHomeBut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_home_but"
-                app:layout_constraintBottom_toBottomOf="@id/homeBut"
-                app:layout_constraintEnd_toEndOf="@id/homeBut"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/homeBut" />
-
-
-            <View
-                android:id="@+id/profileBut"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_marginTop="46dp"
-                android:background="@color/white"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/homeBut"
-                app:layout_constraintTop_toBottomOf="@id/horizScroll"
-                app:layout_constraintWidth_percent="0.5" />
-
-            <View
-                android:id="@+id/oneLine"
-                android:layout_width="0dp"
-                android:layout_height="1dp"
-                android:background="@color/black"
-                app:layout_constraintBottom_toBottomOf="@id/homeBut"
-                app:layout_constraintEnd_toEndOf="@+id/homeBut"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <ImageView
-                android:id="@+id/iconProfileBut"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_profile_but"
-                app:layout_constraintBottom_toBottomOf="@id/profileBut"
-                app:layout_constraintEnd_toEndOf="@id/profileBut"
-                app:layout_constraintStart_toStartOf="@id/profileBut"
-                app:layout_constraintTop_toTopOf="@id/profileBut" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
