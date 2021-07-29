@@ -47,6 +47,7 @@ class PreviewMovieAdapter(
             itemView.setOnClickListener { onItemClick.invoke(adapterPosition) }
         }
     }
+
     fun updates(movies: List<PreviewMovie>) {
         this.movies = movies
         notifyDataSetChanged()
