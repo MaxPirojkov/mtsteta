@@ -43,6 +43,7 @@ class PreviewMovieAdapter(
             textAgeLimit.text = previewMovie.ageRestriction
             bar.rating = (previewMovie.rateScore.toFloat())
 
+
             itemView.setOnClickListener { onItemClick.invoke(adapterPosition) }
         }
     }

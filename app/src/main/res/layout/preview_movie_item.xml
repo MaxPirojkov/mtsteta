@@ -37,6 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
+        android:maxLines="5"
+        android:ellipsize="end"
         android:textSize="@dimen/large_text_size"
         app:layout_constraintEnd_toEndOf="@+id/picPreview"
         app:layout_constraintStart_toStartOf="@+id/picPreview"

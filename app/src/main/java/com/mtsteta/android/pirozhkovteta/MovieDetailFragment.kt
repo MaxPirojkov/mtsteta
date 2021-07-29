@@ -39,6 +39,14 @@ class MovieDetailFragment : Fragment() {
             view.findViewById<TextView>(R.id.nameOfMovie).setText(it.title)
             view.findViewById<TextView>(R.id.descriptionOfMovie).setText(it.description)
             view.findViewById<TextView>(R.id.ageLimit).setText(it.ageRestriction)
+            view.findViewById<RatingBar>(R.id.rateBars).setRating(it.rateScore.toFloat())
+            view.findViewById<ImageView>(R.id.fotoOne).loadImage(it.actorOne)
+            view.findViewById<ImageView>(R.id.fotoTwo).loadImage(it.actorTwo)
+            view.findViewById<ImageView>(R.id.fotoThree).loadImage(it.actorThree)
+            view.findViewById<TextView>(R.id.nameOne).setText(it.actorOneName)
+            view.findViewById<TextView>(R.id.nameTwo).setText(it.actorTwoName)
+            view.findViewById<TextView>(R.id.nameThree).setText(it.actorThreeName)
+            view.findViewById<TextView>(R.id.textInEllipse).setText(it.genre)
         }
     }
 
@@ -57,6 +65,3 @@ class MovieDetailFragment : Fragment() {
 
 }
 
-private fun RatingBar.getRating(rateScore: Int) {
-
-}
