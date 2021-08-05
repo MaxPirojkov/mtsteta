@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.text.FieldPosition
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_movie.*
+import kotlinx.coroutines.launch
 
 class ListMovieFragment : Fragment() {
-    private val dataSource: MoviesDataSource = MoviesDataSourceImpl()
-    private val list = dataSource.getMovies()
+    private var dataSource: MoviesDataSource = MoviesDataSourceImpl()
+    private var list: List<PreviewMovie> = emptyList<PreviewMovie>()
+    private var adapter: PreviewMovieAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,19 +31,39 @@ class ListMovieFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView = view.findViewById<RecyclerView>(R.id.rcView)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
-        val adapter = PreviewMovieAdapter(requireContext()) { onItemClick(it) }
+        adapter = PreviewMovieAdapter(requireContext()) { onItemClick(it) }
         recyclerView.adapter = adapter
-        adapter.updates(list)
+        makeRequest()
+        refreshApp()
+
     }
 
     private fun onItemClick(position: Int) {
-        val previewMovie :PreviewMovie = list.get(position)
-        val fragment = MovieDetailFragment.newInstance(previewMovie)
-        requireActivity().supportFragmentManager
-            .beginTransaction()
-            .add(R.id.content, fragment)
-            .addToBackStack(null)
-            .commit()
+        list?.get(position)?.let { previewMovie ->
+            val fragment = MovieDetailFragment.newInstance(previewMovie)
+            requireActivity().supportFragmentManager
+                .beginTransaction()
+                .add(R.id.content, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+    }
+
+    private fun makeRequest() {
+        lifecycleScope.launch {
+            Thread.sleep(2)
+            list = (dataSource.getMovies())
+            adapter?.updates(list ?: emptyList())
+        }
+    }
+
+    private fun refreshApp(){
+        swipeRefresh.setOnRefreshListener {
+            makeRequest()
+            Toast.makeText(context, "Refresh movie", Toast.LENGTH_SHORT).show()
+            swipeRefresh.isRefreshing = false
+        }
     }
 
 

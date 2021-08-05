@@ -10,7 +10,7 @@ fun ImageView.loadImage(imageUrl: String) {
     Glide
         .with(this.context)
         .load(imageUrl)
-        .override(710)
+//        .override(710)
         .fitCenter()
         .into(this)
 }
