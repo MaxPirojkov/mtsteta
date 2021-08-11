@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import java.lang.Exception
 import java.text.FieldPosition
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_movie.*
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 
 class ListMovieFragment : Fragment() {
     private var dataSource: MoviesDataSource = MoviesDataSourceImpl()
-    private var list: List<PreviewMovie> = emptyList<PreviewMovie>()
+    private var list: List<PreviewMovie> = emptyList()
     private var adapter: PreviewMovieAdapter? = null
 
     override fun onCreateView(
@@ -47,18 +48,20 @@ class ListMovieFragment : Fragment() {
                 .addToBackStack(null)
                 .commit()
         }
-
     }
 
     private fun makeRequest() {
         lifecycleScope.launch {
-            Thread.sleep(2)
-            list = (dataSource.getMovies())
-            adapter?.updates(list ?: emptyList())
+            try {
+                list = (dataSource.getMovies())
+                adapter?.updates(list)
+            } catch (exception: Exception) {
+                println("Error $exception")
+            }
         }
     }
 
-    private fun refreshApp(){
+    private fun refreshApp() {
         swipeRefresh.setOnRefreshListener {
             makeRequest()
             Toast.makeText(context, "Refresh movie", Toast.LENGTH_SHORT).show()
