@@ -1,6 +1,9 @@
 package com.mtsteta.android.pirozhkovteta
 
+import android.content.ContentValues.TAG
+import android.nfc.Tag
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -10,10 +13,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import java.lang.Exception
-import java.text.FieldPosition
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_movie.*
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class ListMovieFragment : Fragment() {
     private var dataSource: MoviesDataSource = MoviesDataSourceImpl()
@@ -50,16 +54,18 @@ class ListMovieFragment : Fragment() {
         }
     }
 
+
     private fun makeRequest() {
         lifecycleScope.launch {
             try {
-                list = (dataSource.getMovies())
+                list = withContext(Dispatchers.IO) { dataSource.getMovies() }
                 adapter?.updates(list)
             } catch (exception: Exception) {
                 println("Error $exception")
             }
         }
     }
+
 
     private fun refreshApp() {
         swipeRefresh.setOnRefreshListener {
