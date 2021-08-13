@@ -11,7 +11,6 @@
     <string name="description_preview">"Эйч — загадочный\nи холодный на вид\nджентльмен, но внутри\nнего пылает жажда\nсправедливости.\nПреследуя..."</string>
 
 
-
     <!--     жанры фильмов-->
     <string name="genre_action">боевики</string>
     <string name="genre_drama">драмы</string>
@@ -19,6 +18,24 @@
     <string name="genre_art">артхаус</string>
     <string name="genre_melodrama">мелодрамы</string>
     <string name="title_popular_now">Популярное сейчас</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_Profile">Константин</string>
+    <string name="profile_email">konst.89@mail.com</string>
+    <string name="profilt_interest">Интересы</string>
+    <string name="profile_data_self">Личные данные</string>
+    <string name="profile_name">Имя</string>
+    <string name="profile_hint_phone">Телефон</string>
+    <string name="profile_tittle_settings">Настройки</string>
+    <string name="profile_notify_and_sounds">Уведомления и звуки</string>
+    <string name="profile_confident">Конфедициальность</string>
+    <string name="profile_theme">Тема</string>
+    <string name="profile_languge">Язык</string>
+    <string name="profile_data">Данные и память</string>
+    <string name="profile_app">Приложение</string>
+    <string name="profile_sup_que">Задать вопрос</string>
+    <string name="profile_sup_report">Сообщить о проблеме</string>
+    <string name="profile_exit">Выйти</string>
 
 
 </resources>

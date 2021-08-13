@@ -10,7 +10,6 @@
         android:layout_width="150dp"
         android:layout_height="216dp"
         android:layout_marginStart="@dimen/indent_margin"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="@dimen/indent_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textColor="@color/black"
+        android:maxLines="5"
+        android:ellipsize="end"
         android:textSize="@dimen/large_text_size"
         app:layout_constraintEnd_toEndOf="@+id/picPreview"
         app:layout_constraintStart_toStartOf="@+id/picPreview"
@@ -45,19 +46,20 @@
 
     <ImageView
         android:id="@+id/ellipse"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="130dp"
-        android:layout_marginEnd="2dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:src="@drawable/ic_ellipse_age"
+        android:layout_marginEnd="@dimen/indent_margin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/picPreview" />
+        app:layout_constraintBottom_toBottomOf="@id/rateBar"
+        app:layout_constraintTop_toTopOf="@+id/rateBar" />
 
     <TextView
         android:id="@+id/textOfAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:textSize="8sp"
         app:layout_constraintBottom_toBottomOf="@id/ellipse"
         app:layout_constraintEnd_toEndOf="@id/ellipse"
         app:layout_constraintStart_toStartOf="@id/ellipse"
@@ -70,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="130dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="6dp"
         android:isIndicator="true"
         android:progressTint="@color/black"
         android:scaleX="1.2"
@@ -79,7 +81,7 @@
         android:transformPivotX="0dp"
         android:transformPivotY="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@id/picPreview"
+        app:layout_constraintStart_toStartOf="@id/textDescription"
         app:layout_constraintTop_toBottomOf="@id/picPreview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

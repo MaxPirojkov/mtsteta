@@ -13,7 +13,7 @@ import android.widget.RatingBar
 
 class PreviewMovieAdapter(
     context: Context,
-    private val onItemClick: (String) -> Unit
+    private val onItemClick: (Int) -> Unit
 ) : RecyclerView.Adapter<PreviewMovieAdapter.PreviewHolder>() {
     private var movies: List<PreviewMovie> = emptyList()
 
@@ -43,17 +43,17 @@ class PreviewMovieAdapter(
             textAgeLimit.text = previewMovie.ageRestriction
             bar.rating = (previewMovie.rateScore.toFloat())
 
-            itemView.setOnClickListener { onItemClick.invoke(previewMovie.title) }
+
+            itemView.setOnClickListener { onItemClick.invoke(adapterPosition) }
         }
     }
+
     fun updates(movies: List<PreviewMovie>) {
         this.movies = movies
         notifyDataSetChanged()
     }
 }
-private fun ImageView.loadImage(imageUrl: String) {
-    Glide.with(this.context).load(imageUrl).into(this)
-}
+
 
 
 

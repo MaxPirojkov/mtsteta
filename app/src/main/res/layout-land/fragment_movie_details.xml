@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <ImageView
         android:id="@+id/mainPic"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         android:src="@drawable/top_pic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,11 +17,8 @@
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -53,8 +50,12 @@
 
             <TextView
                 android:id="@+id/textInEllipse"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="4dp"
                 android:text="@string/genre_action"
                 android:textColor="@color/black"
                 android:textSize="@dimen/small_text_size"
@@ -176,6 +177,7 @@
 
                     <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/fotoOne"
+                        tools:src="@tools:sample/backgrounds/scenic"
                         android:layout_width="@dimen/default_width_pic"
                         android:layout_height="@dimen/default_high_pic"
                         android:layout_marginStart="@dimen/indent_margin"
@@ -183,8 +185,7 @@
                         android:scaleType="centerCrop"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:riv_corner_radius="10dip"
-                        tools:src="@tools:sample/backgrounds/scenic" />
+                        app:riv_corner_radius="10dip" />
 
                     <TextView
                         android:id="@+id/nameOne"
@@ -202,6 +203,7 @@
 
                     <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
                         android:id="@+id/fotoTwo"
+                        tools:src="@tools:sample/backgrounds/scenic"
                         android:layout_width="@dimen/default_width_pic"
                         android:layout_height="@dimen/default_high_pic"
                         android:layout_marginStart="10dp"
@@ -209,8 +211,7 @@
                         android:scaleType="centerCrop"
                         app:layout_constraintStart_toEndOf="@id/fotoOne"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:riv_corner_radius="10dip"
-                        tools:src="@tools:sample/backgrounds/scenic" />
+                        app:riv_corner_radius="10dip" />
 
                     <TextView
                         android:id="@+id/nameTwo"
@@ -233,10 +234,10 @@
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="16dp"
                         android:scaleType="centerCrop"
+                        tools:src="@tools:sample/backgrounds/scenic"
                         app:layout_constraintStart_toEndOf="@id/fotoTwo"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:riv_corner_radius="10dip"
-                        tools:src="@tools:sample/backgrounds/scenic" />
+                        app:riv_corner_radius="10dip" />
 
                     <TextView
                         android:id="@+id/nameThree"
