@@ -1,20 +1,16 @@
 package com.mtsteta.android.pirozhkovteta
 
-import android.content.ContentValues.TAG
-import android.nfc.Tag
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import java.lang.Exception
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_list_movie.*
+import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -39,8 +35,7 @@ class ListMovieFragment : Fragment() {
         adapter = PreviewMovieAdapter(requireContext()) { onItemClick(it) }
         recyclerView.adapter = adapter
         makeRequest()
-        refreshApp()
-
+        refreshList()
     }
 
     private fun onItemClick(position: Int) {
@@ -54,27 +49,24 @@ class ListMovieFragment : Fragment() {
         }
     }
 
-
     private fun makeRequest() {
-        lifecycleScope.launch {
-            try {
-                list = withContext(Dispatchers.IO) { dataSource.getMovies() }
-                adapter?.updates(list)
-            } catch (exception: Exception) {
-                println("Error $exception")
-            }
+        lifecycleScope.launch(handler) {
+            list = withContext(Dispatchers.IO) { dataSource.getMovies() }
+            adapter?.updates(list)
+            swipeToRefresh.isRefreshing = false
         }
     }
 
-
-    private fun refreshApp() {
-        swipeRefresh.setOnRefreshListener {
+    private fun refreshList() {
+        swipeToRefresh.setOnRefreshListener {
             makeRequest()
-            Toast.makeText(context, "Refresh movie", Toast.LENGTH_SHORT).show()
-            swipeRefresh.isRefreshing = false
         }
     }
 
+
+    private val handler = CoroutineExceptionHandler { context, exception ->
+        println("handled $exception")
+    }
 
     companion object {
         /**
@@ -92,7 +84,5 @@ class ListMovieFragment : Fragment() {
                 arguments = Bundle().apply {
                 }
             }
-
-
     }
 }

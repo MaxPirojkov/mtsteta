@@ -2,7 +2,7 @@ package com.mtsteta.android.pirozhkovteta
 
 class MoviesDataSourceImpl : MoviesDataSource {
 
-    override fun getMovies(): List<PreviewMovie> {
+    override fun getMovies(): List<PreviewMovie>{
         Thread.sleep(2000)
         return listOf(
             PreviewMovie(
