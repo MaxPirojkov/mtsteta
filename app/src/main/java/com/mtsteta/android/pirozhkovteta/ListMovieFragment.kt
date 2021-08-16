@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ProgressBar
+import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -16,9 +18,9 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ListMovieFragment : Fragment() {
-    private var dataSource: MoviesDataSource = MoviesDataSourceImpl()
     private var list: List<PreviewMovie> = emptyList()
     private var adapter: PreviewMovieAdapter? = null
+    private val viewModel = ListMovieViewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,11 +33,28 @@ class ListMovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val recyclerView = view.findViewById<RecyclerView>(R.id.rcView)
+        val progressBar = view.findViewById<ProgressBar>(R.id.progressBar)
         recyclerView.layoutManager = GridLayoutManager(context, 2)
         adapter = PreviewMovieAdapter(requireContext()) { onItemClick(it) }
         recyclerView.adapter = adapter
-        makeRequest()
         refreshList()
+        viewModel.movieList.observe(viewLifecycleOwner, Observer {
+            adapter?.updates(it)
+            list = it
+            swipeToRefresh.isRefreshing = false
+        })
+        viewModel.requestState.observe(viewLifecycleOwner, Observer {
+            if(it.hasData){
+            }
+            else if(it.isProgress){
+                progressBar.visibility=View.VISIBLE
+                swipeToRefresh.visibility = View.GONE
+            }else{
+                progressBar.visibility=View.GONE
+                swipeToRefresh.visibility = View.VISIBLE
+            }
+//            swipeToRefresh.isRefreshing = false
+        })
     }
 
     private fun onItemClick(position: Int) {
@@ -49,24 +68,14 @@ class ListMovieFragment : Fragment() {
         }
     }
 
-    private fun makeRequest() {
-        lifecycleScope.launch(handler) {
-            list = withContext(Dispatchers.IO) { dataSource.getMovies() }
-            adapter?.updates(list)
-            swipeToRefresh.isRefreshing = false
-        }
-    }
 
     private fun refreshList() {
         swipeToRefresh.setOnRefreshListener {
-            makeRequest()
+            viewModel.refreshList()
         }
     }
 
 
-    private val handler = CoroutineExceptionHandler { context, exception ->
-        println("handled $exception")
-    }
 
     companion object {
         /**

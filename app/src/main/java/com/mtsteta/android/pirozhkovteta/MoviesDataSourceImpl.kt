@@ -3,7 +3,7 @@ package com.mtsteta.android.pirozhkovteta
 class MoviesDataSourceImpl : MoviesDataSource {
 
     override fun getMovies(): List<PreviewMovie>{
-        Thread.sleep(2000)
+        Thread.sleep(4000)
         return listOf(
             PreviewMovie(
                 title = "Гнев человеческий",
