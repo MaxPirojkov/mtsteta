@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.mtsteta.android.pirozhkovteta.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" />
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.mtsteta.android.pirozhkovteta.MovieDetailFragment"
+        android:label="MovieDetailFragment" >
+        <action
+            android:id="@+id/action_movieDetailFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_movieDetailFragment_to_listMovieFragment2"
+            app:destination="@id/listMovieFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.mtsteta.android.pirozhkovteta.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/listMovieFragment2"
+        android:name="com.mtsteta.android.pirozhkovteta.ListMovieFragment"
+        android:label="ListMovieFragment" >
+        <action
+            android:id="@+id/action_listMovieFragment2_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+        <action
+            android:id="@+id/action_listMovieFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>

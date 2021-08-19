@@ -33,10 +33,6 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
-
-
-
-
         if (savedInstanceState == null) {
             openFragment(ListMovieFragment.newInstance())
         }
